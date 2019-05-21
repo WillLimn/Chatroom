@@ -1,3 +1,5 @@
+var isConnected = false;
+
 function send_connection()
 {
     hide_all();
@@ -5,7 +7,7 @@ function send_connection()
     document.getElementById("footer_sender").style.display = 'block';
     document.getElementById("bubble_container").style.display = 'block';
     // TODO:Send, Queue, Accept the connection request. 
-
+    isConnected = true;
 }
 
 function send_paragraph()
@@ -22,12 +24,14 @@ function send_paragraph()
     }
 }
 
-function exit_connection()
+function exit_connection(page)
 {
     if(confirm("確定要離開?"))
     {
+        isConnected = false;
         hide_all();
-        document.getElementById("main_container").style.display = 'block';
+        var id = resolve_pages(page);
+        document.getElementById(id).style.display = 'block';
     }
 }
 
@@ -35,16 +39,19 @@ function keyword(key)
 {
     const elem    = document.getElementById(key);
     const elem2   = document.getElementById("secret_input");
-    console.log(key);
     elem2.value = elem.innerText;
 }
 
 function load_container(page)
 {
-    hide_all();
-    var id = resolve_pages(page);
-    console.log(id);
-    document.getElementById(id).style.display = 'block';
+    if(isConnected)
+        exit_connection(page);
+    else
+    {
+        hide_all();
+        var id = resolve_pages(page);
+        document.getElementById(id).style.display = 'block';
+    }
 }
 
 function hide_all()
