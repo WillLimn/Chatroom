@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>WantI</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">WantI<sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li id="secret_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-sms"></i>
+          <span style="font-family: 'Microsoft JhengHei'">使用密語</span></a>
+      </li>
+      <li id="information_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-info-circle"></i>
+          <span style="font-family: 'Microsoft JhengHei'">說明</span></a>
+      </li>
+      <li id="contact_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-envelope"></i>
+          <span style="font-family: 'Microsoft JhengHei'">聯絡我們</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          <span style="font-family: 'Microsoft JhengHei'">捷徑</span>
+      </div>
+
+      <li id="fans_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-sign-out-alt"></i>
+          <span style="font-family: 'Microsoft JhengHei'">前往粉絲專頁</span></a>
+      </li>
+      <li id="post_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-at"></i>
+          <span style="font-family: 'Microsoft JhengHei'">前往尋人啟事</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          <span style="font-family: 'Microsoft JhengHei'">設定</span>
+      </div>
+
+      <li id="set_page" class="nav-item" onclick="load_container(id);">
+        <a class="nav-link">
+          <i class="fas fa-cog"></i>
+          <span style="font-family: 'Microsoft JhengHei'">人物設定</span></a>
+      </li>
+      <li id="set_volume" class="nav-item" onclick="">
+          <a class="nav-link">
+            <i class="fas fa-volume-up"></i>
+            <span style="font-family: 'Microsoft JhengHei'">音效提醒</span></a>
+        </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-gray-400 topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-600"></i>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Guest</span>
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" id="main_container">
+
+          <!-- Page Heading -->
+          <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card mb-12 py-3 border-bottom-primary">
+                    <div class="card-body">
+                        <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">準備好，來一場激烈的網愛。</h1>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+              <div class="col-lg-4"></div>
+            <img src="img/love.png">
+          </div>
+          <div class="row">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-lg-5"></div>
+            <div class="col-lg-4">
+              <br><br>
+              <a href="#" class="btn btn-primary btn-icon-split btn-lg" id="start_btn" onclick="send_connection();">
+                <span class="icon text-white-50">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span class="text" style="font-family: 'Microsoft YaHei'">開始約跑</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" id="secret_container" style="display: none">
+
+            <!-- Page Heading -->
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="row mb-4">
+              <div class="col-lg-3"></div>
+                      <div class="col-lg-4">
+                        <form class="user">
+                            <input type="text" class="form-control form-control-user p-3" id="secret_input"  placeholder="輸入密語來相遇..." style="font-family: 'Microsoft YaHei'; font-size: x-large">
+                        </form>
+                      </div>
+                      <div class="col-lg-2">
+                          <a href="#" class="btn btn-primary btn-icon-split btn-lg" id="start_btn" onclick="send_connection();">
+                              <span class="icon text-white-50">
+                                <i class="fas fa-heart"></i>
+                              </span>
+                              <span class="text" style="font-family: 'Microsoft YaHei'">開始約跑</span>
+                          </a>
+                      </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-6" id="keyword">
+                    <span id="keyword_1" class="py-3 mb-4 p-2" style="font-family: 'Microsoft YaHei';font-size: xx-large" onclick="keyword('keyword_1');">高雄發大財</span>
+                    <span id="keyword_2" class="py-3 mb-4 p-2" style="font-family: 'Microsoft YaHei';font-size: xx-large" onclick="keyword('keyword_2');">肛眼俠</span>
+                    <span id="keyword_3" class="py-3 mb-4 p-2" style="font-family: 'Microsoft YaHei';font-size: xx-large" onclick="keyword('keyword_3');">星座</span>
+                    <span id="keyword_4" class="py-3 mb-4 p-2" style="font-family: 'Microsoft YaHei';font-size: xx-large" onclick="keyword('keyword_4');">我女兒有雞雞</span>
+                    <span id="keyword_5" class="py-3 mb-4 p-2" style="font-family: 'Microsoft YaHei';font-size: xx-large" onclick="keyword('keyword_5');">成人模式</span>
+              </div>
+            </div>
+  
+          </div>
+          <!-- /.container-fluid -->
+          <div class="container-fluid" id="404_container" style="display: none">
+
+              <!-- 404 Error Text -->
+              <div class="text-center">
+                <div class="error mx-auto" data-text="404">404</div>
+                <p class="lead text-gray-800 mb-5">Page Not Found</p>
+                <p class="text-gray-500 mb-0" style="font-family: 'Microsoft YaHei';font-size: xx-large">猴子們正在積極維修中...</p>
+                <a href="index.html" style="font-family: 'Microsoft YaHei';font-size: xx-large">&larr; 返回頁面</a>
+              </div>
+    
+          </div>
+
+          <div class="container-fluid" id="information_container" style="display: none">
+
+              <div class="row mb-4">
+                <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">開始使用前請同意並確實遵守</h1><br>
+                              <h1 id="eula_page" class="h2 mb-0 text-gray-600 text-center my-auto" style="font-family: 'Microsoft YaHei'"onclick="load_container(id);">WantI使用者條款</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">WantI是甚麼?</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">找個人，輕鬆的聊天。若要結束，就點擊左下角的離開。</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">WantI會不穩斷線嗎？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">在吾聊使用無痕模式，會造成隨機斷線，且難以救回。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">只要瀏覽器不使用無痕或隱私模式，不使用清理系統工具，電腦或手機</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">不爆炸，不論重開機、重新整理、網路斷線，你們之間仍然聯繫著。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">要真正的讓對話斷線，請使用左下角的離開按鈕。</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">密語是什麼？ 有什麼功能？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">密語用來與使用相同"密語"的人相遇。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">舉例來說，可以使用"練英文"與對方練習英文。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">使用"台南"找尋台南人，或與網友約好密語在app上加密聊天。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">密語也支援使用網址直連：</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">例如可以用此網址「http://wootalk.today/key/八卦版」</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">讓點擊的網友直接就會使用八卦版這個密語。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">想聊成人話題時，請記得用"成人模式"密語唷！</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">網愛安全嗎？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">對話全程採用TLS 1.2加密傳輸，剩下的就是你與陌生人的事情了。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">在與陌生人聊天的過程中，請不要隨意留給對方隱私資訊(如：信用卡號碼、帳號密碼)。</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">已送達跟已讀是一樣的意思嗎？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">兩者不同，已送達代表訊息已經傳至對方的裝置上(電腦或行動</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">裝置)，並不代表對方已經讀過。例如縮小視窗、切換至背景、</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">甚至人不在電腦前面，也會顯示已送達。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">網愛沒有已讀功能，是為了讓愛友們上來輕鬆的聊天。</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">為什麼沒看到已送達？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">當訊息沒有送至對方時(例如：對方網路不穩或者關閉瀏覽器或</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">App)，就不會顯示已送達。等到對方重新連上網路或者回到吾</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">聊網站，就會出現已送達。</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">我遇到問題了！</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">請至WantI網愛粉絲專頁。</h1>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">或寄信到service@huntsman.com.tw。</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-8">
+                      <div class="card mb-12 py-3 border-left-primary">
+                          <div class="card-body">
+                              <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">要怎麼開始聊天？</h1><br>
+                              <h1 class="h5 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">按下面的按鈕，開始吧！</h1>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-lg-5"></div>
+                  <div class="col-lg-4">
+                    <br><br>
+                    <a href="#" class="btn btn-primary btn-icon-split btn-lg" id="start_btn" onclick="send_connection();">
+                      <span class="icon text-white-50">
+                        <i class="fas fa-heart"></i>
+                      </span>
+                      <span class="text" style="font-family: 'Microsoft YaHei'">開始約跑</span>
+                    </a>
+                  </div>
+      
+                </div>
+    
+          </div>
+
+          <div class="container-fluid" id="contact_container" style="display: none">
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div class="text-center">
+                    <p class="text-gray-800 mb-0" style="font-family: 'Microsoft YaHei';font-size: xx-large">service@huntsman.com.tw</p>
+                </div>
+            </div>
+
+          <div class="container-fluid" id="eula_container" style="display: none">
+              <div class="row mb-4">
+                  <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <div class="card mb-12 py-3 border-left-primary">
+                            <div class="card-body">
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">使用條款</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">本使用條款（即權利與義務宣告），（以下簡稱「協議」或「條款」），是規</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">範Want I（以下簡稱「本服務」) 與用戶及其他與本服務互動的人士的關係。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">若使用或登入本服務，即代表您同意本協議，並授予站方執行本協議所需要的</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">權限。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">對於條款的同意表示</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">如用戶不同意以下條款，請立即停止使用本服務，否則即視為已閱讀及審閱，</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">在了解本合約條款所有內容下，同意遵守所有合約條款之會員規範，並願遵守</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">相關法律規定。本服務一經用戶實際使用，將視為用戶已同意並遵守本條款。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">條款的變更</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">於本服務判斷有必要時，得在不事先通知用戶的情形下隨時變更本條款及個別</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">使用條款。變更後的本條款自公布在本服務官方網站內的適當處時起生效。如</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">用戶於本條款變更後仍繼續使用本服務，將視為用戶已同意變更後的本條款及</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">其所適用的個別使用條款。請用戶於使用本服務時，隨時參閱最新版本的使用</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">條款。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">隱私權</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">本服務尊重用戶的隱私權。本服務將會以安全的方式管理自用戶處蒐集的資料</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">，並對安全管理採取嚴格的措施。本服務依據您授予的權限，收集您使用我們</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">服務的電腦、手機相關的資訊，包含但不限定於作業系統、硬體版本及裝置識</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">別碼等屬性。另請謹慎保護您自己的隱私資料，請勿輕易將信用卡及私密個人</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">資料提供與平台及其他用戶。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">禁止行為與承諾</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">本服務盡力維護用戶安全，要維持本服務及用戶安全，需要用戶的協助，包括</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">以下承諾。</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">1.	您不會在本服務上發佈未經授權的商業通訊（如垃圾郵件）。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">2.	您不會收集用戶的內容或資料，或以其他方式在未經我們事先許可，使</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">用自動化方式登入 本服務（如機器人、網路蜘蛛或網路爬蟲等軟體）。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">3.	您不會進行任何會關閉、超載或損害 Want I正常運作和外觀的事情，如</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">拒絕服務攻擊或干擾呈現頁面或其他 Want I功能等。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">4.	您不會在本服務從事非法多層次傳銷，如金字塔式傳銷。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">5.	您不會上傳病毒或其他惡意程式碼。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">6.	您不會霸凌、恐嚇或騷擾任何用戶。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">7.	您不會發表以下內容：鼓吹仇恨、威脅、色情、煽動暴力或帶有裸露或</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">血腥暴力傾向。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">8.	您不會使用本服務進行任何非法、誤導、惡意或歧視的行為。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">9.	您不會違反任何法律或法規，包括信用卡詐騙或銀行帳戶詐騙。</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-left my-auto" style="font-family: 'Microsoft YaHei'">10.	您不會協助或鼓勵任何違反本協議或政策的行為。</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">若您違反上述承諾及禁止事項，或經用戶據報有違反包含但不限於上述之行為</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">時，我們有權禁止您的使用，情節嚴重者將報請警察機關處理、提出損害賠償。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">用戶責任與免責聲明</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">本服務可能會出現中斷、故障或是遭受網路駭客等外力入侵、其他用戶對您的</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">不當舉止等，造成您使用上不便、連線中斷，或其他經濟上、身心上損失等情</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">形。您於使用本服務時宜自行採取防護措施，本服務對於您因使用本服務而造</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">成的損害，不負任何賠償責任。</h1><br><br>
+                                <h1 class="h2 mb-0 text-gray-800 text-center my-auto" style="font-family: 'Microsoft YaHei'">其他條款</h1><br>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">本服務鄭重提醒用户注意本協議禁止行為與用戶責任及免責聲明，請用戶仔細</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">閱讀，自主考慮風險。未成年人應在法定監護人的陪同下閱讀本協議。本服務</h1>
+                                <h1 class="h5 mb-0 text-gray-700 text-center my-auto" style="font-family: 'Microsoft YaHei'">保留本協議一切解釋和修改權利。</h1>
+                              </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
+
+          <div class="container-fluid" id="bubble_container" style="display: none">
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="card mb-4 py-3 border-bottom-primary">
+                          <div class="card-body">
+                              <p class="text-gray-800 mb-0" style="font-family: 'Microsoft YaHei';font-size: x-large">Hi</p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+          </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer id="footer_copyright" class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; WantI 2019</span>
+          </div>
+        </div>
+      </footer>
+
+      <footer id="footer_sender" class="sticky-footer bg-white" style="display: none">
+
+        <div class="row">
+          <div class="col-lg-12">
+              <form class="user">
+                <div class="form-group row">
+                  <div class="col-sm-1 mb-sm-0 text-center">
+                      <a href="#" class="btn btn-danger btn-icon-split btn-lg" id="start_btn" onclick="exit_connection();">
+                          <span class="text" style="font-family: 'Microsoft YaHei'">離開</span>
+                      </a>
+                  </div>
+                  <div class="col-sm-10 mb-sm-0">
+                      <input type="text" id="input_dialog" class="form-control form-control-user" placeholder="輸入訊息..." aria-describedby="basic-addon2" style="font-family: 'Microsoft YaHei';font-size: large">
+                  </div>
+                  <div class="col-sm-1 mb-sm-0 text-center">
+                      <a href="#" class="btn btn-success btn-icon-split btn-lg" onclick="send_paragraph();">
+                          <span class="text" style="font-family: 'Microsoft YaHei'">傳送</span>
+                      </a>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+
+        </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script src="js/animation.js"></script>
+
+</body>
+
+</html>
